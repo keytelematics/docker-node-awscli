@@ -39,5 +39,5 @@ jobs:
           platforms: linux/arm64,linux/amd64
           push: true
           tags: keytelematics/docker-node-awscli:20
-          labels: node,awscli
+          labels: ${{ steps.meta.outputs.labels }}
           build-args: NODE_IMAGE=20-bookworm
