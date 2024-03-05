@@ -5,7 +5,6 @@ https://hub.docker.com/_/node/
 Tags:
 ```
 keytelematics/docker-node-awscli:20
-keytelematics/docker-node-awscli:20-arm64
 ```
 
 
@@ -14,7 +13,7 @@ To build run
 `./build.sh`
 
 ### Building only for ARM
-Run `docker buildx build --platform linux/arm64 -t keytelematics/docker-node-awscli:20-arm64 .`
+Run `docker buildx build --platform linux/arm64 -t keytelematics/docker-node-awscli:20 .`
 
 ### Building for only x86
 Run `docker build -t keytelematics/docker-node-awscli:20 .`
