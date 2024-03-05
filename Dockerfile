@@ -8,7 +8,7 @@ COPY install_awscli.sh .
 ARG BREAK_PACKAGES=true
 RUN BREAK_PACKAGES=$BREAK_PACKAGES ./install_awscli.sh 
 
-# RUN rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
 
-# RUN node --version
+RUN node --version
 
