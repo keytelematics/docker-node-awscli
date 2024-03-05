@@ -3,7 +3,7 @@ name: Publish Docker Image
 on:
   push:
     branches:
-      - master
+      - fix-14-build
   
 
 jobs:
@@ -26,11 +26,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_TOKEN }}
+      # - name: Log in to Docker Hub
+      #   uses: docker/login-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKER_USERNAME }}
+      #     password: ${{ secrets.DOCKER_TOKEN }}
       
       # - name: Build and push Node 20 Docker image
       #   uses: docker/build-push-action@v2
@@ -60,7 +60,9 @@ jobs:
       #     push: true
       #     tags: keytelematics/docker-node-awscli:16
       #     labels: ${{ steps.meta.outputs.labels }}
-      #     build-args: NODE_IMAGE=16-bookworm
+      #     build-args: NODE_IMAGE=16-bookworm |
+              # - IP_ARGS=--break-system-packages
+            
 
       - name: Build and push Node 14 Docker image
         uses: docker/build-push-action@v2
@@ -70,4 +72,5 @@ jobs:
           push: true
           tags: keytelematics/docker-node-awscli:14
           labels: node,awscli
-          build-args: NODE_IMAGE=14-bullseye
+          build-args: NODE_IMAGE=14-bullseye |
+            
