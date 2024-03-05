@@ -5,7 +5,7 @@ FROM node:${NODE_IMAGE}
 RUN apt-get update 
 RUN apt-get install -y python3-pip jq
 
-ENV PIP_ARGS=${PIP_ARGS}
+RUN echo ${PIP_ARGS}
 RUN pip3 install awscli $PIP_ARGS
 RUN rm -rf /var/lib/apt/lists/*
 
