@@ -7,7 +7,7 @@ RUN apt-get install -y python3-pip jq
 
 ENV BREAK_PACKAGES=${BREAK_PACKAGES}
 COPY install_awscli.sh .
-RUN BREAK_PACKAGES=${BREAK_PACKAGES} ./install_awscli.sh 
+RUN BREAK_PACKAGES=$BREAK_PACKAGES ./install_awscli.sh 
 
 # RUN rm -rf /var/lib/apt/lists/*
 

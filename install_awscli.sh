@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ "$BREAK_PACKAGES" == "true" ]]; then
+if [[ -n "$BREAK_PACKAGES" ]]; then
     pip3 install awscli --break-system-packages 
 else 
     pip3 install awscli
