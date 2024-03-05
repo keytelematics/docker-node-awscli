@@ -60,9 +60,7 @@ jobs:
           push: true
           tags: keytelematics/docker-node-awscli:16
           labels: node,awscli
-          build-args: |
-            NODE_IMAGE=16-bookworm
-            BREAK_PACKAGES=true
+          build-args: NODE_IMAGE=16-bookworm
             
 
       # - name: Build and push Node 14 Docker image
