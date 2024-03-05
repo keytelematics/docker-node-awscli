@@ -13,7 +13,7 @@ To build run
 `./build.sh`
 
 ### Building only for ARM
-Run `docker buildx build --platform linux/arm64 -t keytelematics/docker-node-awscli:20 .`
+Run `docker buildx build --build-arg="NODE_IMAGE=20-bookworm --platform linux/arm64 -t keytelematics/docker-node-awscli:20 .`
 
 ### Building for only x86
-Run `docker build -t keytelematics/docker-node-awscli:20 .`
+Run `docker build --build-arg="NODE_IMAGE=20-bookworm"  -t keytelematics/docker-node-awscli:20 .`

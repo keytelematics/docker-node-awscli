@@ -1,4 +1,5 @@
-FROM node:20-bookworm
+ARG NODE_IMAGE=20-bookworm
+FROM node:${NODE_IMAGE}
 
 RUN apt-get update 
 RUN apt-get install -y python3-pip jq
