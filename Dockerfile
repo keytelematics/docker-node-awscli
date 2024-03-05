@@ -1,8 +1,10 @@
-FROM node:10
+ARG NODE_IMAGE=20-bookworm
+FROM node:${NODE_IMAGE}
 
-RUN apt-get update && apt-get install -y python-pip jq && \
-	pip install awscli && \
-	rm -rf /var/lib/apt/lists/*
+RUN apt-get update 
+RUN apt-get install -y python3-pip jq
+RUN pip3 install awscli --break-system-packages
+RUN rm -rf /var/lib/apt/lists/*
 
-RUN node --version && npm install yarn --global
+RUN node --version
 
