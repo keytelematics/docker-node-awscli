@@ -36,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v1
         with:
-          images: keytelematics/docker-node-awscli:20-bookworm
+          images: keytelematics/docker-node-awscli:20
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
@@ -44,5 +44,5 @@ jobs:
           context: .
           platforms: linux/arm64,linux/amd64
           push: true
-          tags: keytelematics/docker-node-awscli:20-bookworm
+          tags: keytelematics/docker-node-awscli:20
           labels: ${{ steps.meta.outputs.labels }}
