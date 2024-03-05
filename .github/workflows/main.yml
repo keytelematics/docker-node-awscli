@@ -59,8 +59,9 @@ jobs:
       #     platforms: linux/arm64,linux/amd64
       #     push: true
       #     tags: keytelematics/docker-node-awscli:16
-      #     labels: ${{ steps.meta.outputs.labels }}
+      #     labels: node,awscli
       #     build-args: NODE_IMAGE=16-bookworm
+            
 
       - name: Build and push Node 14 Docker image
         uses: docker/build-push-action@v2
@@ -70,4 +71,7 @@ jobs:
           push: true
           tags: keytelematics/docker-node-awscli:14
           labels: node,awscli
-          build-args: NODE_IMAGE=14-bullseye
+          build-args: |
+            NODE_IMAGE=14-bullseye
+            BREAK_PACKAGES=false
+            

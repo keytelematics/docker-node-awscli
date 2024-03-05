@@ -3,7 +3,11 @@ FROM node:${NODE_IMAGE}
 
 RUN apt-get update 
 RUN apt-get install -y python3-pip jq
-RUN pip3 install awscli --break-system-packages
+
+COPY install_awscli.sh .
+ARG BREAK_PACKAGES=true
+RUN BREAK_PACKAGES=$BREAK_PACKAGES ./install_awscli.sh 
+
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN node --version
