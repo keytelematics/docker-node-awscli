@@ -61,7 +61,7 @@ jobs:
           tags: keytelematics/docker-node-awscli:16
           labels: node,awscli
           build-args: |
-            BREAK_PACKAGES=true
+            BREAK_PACKAGES="true"
             NODE_IMAGE=16-bookworm
             
 
