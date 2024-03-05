@@ -52,17 +52,17 @@ jobs:
       #     labels: ${{ steps.meta.outputs.labels }}
       #     build-args: NODE_IMAGE=18-bookworm
 
-      - name: Build and push Node 16 Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          platforms: linux/arm64,linux/amd64
-          push: true
-          tags: keytelematics/docker-node-awscli:16
-          labels: node,awscli
-          build-args: |
-            BREAK_PACKAGES=true
-            NODE_IMAGE=16-bookworm
+      # - name: Build and push Node 16 Docker image
+      #   uses: docker/build-push-action@v2
+      #   with:
+      #     context: .
+      #     platforms: linux/arm64,linux/amd64
+      #     push: true
+      #     tags: keytelematics/docker-node-awscli:16
+      #     labels: node,awscli
+      #     build-args: |
+      #       BREAK_PACKAGES=true
+      #       NODE_IMAGE=16-bookworm
             
 
       - name: Build and push Node 14 Docker image
