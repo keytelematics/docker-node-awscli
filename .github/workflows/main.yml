@@ -3,7 +3,7 @@ name: Publish Docker Image
 on:
   push:
     branches:
-      - fix-14-build
+      - master
   
 
 jobs:
