@@ -50,7 +50,7 @@ jobs:
       #     push: true
       #     tags: keytelematics/docker-node-awscli:18
       #     labels: ${{ steps.meta.outputs.labels }}
-      #     build-args: NODE_IMAGE=18
+      #     build-args: NODE_IMAGE=18-bookworm
 
       # - name: Build and push Node 16 Docker image
       #   uses: docker/build-push-action@v2
@@ -60,7 +60,7 @@ jobs:
       #     push: true
       #     tags: keytelematics/docker-node-awscli:16
       #     labels: ${{ steps.meta.outputs.labels }}
-      #     build-args: NODE_IMAGE=16
+      #     build-args: NODE_IMAGE=16-bookworm
 
       - name: Build and push Node 14 Docker image
         uses: docker/build-push-action@v2
@@ -70,4 +70,4 @@ jobs:
           push: true
           tags: keytelematics/docker-node-awscli:14
           labels: node,awscli
-          build-args: NODE_IMAGE=14.0.0-stretch
+          build-args: NODE_IMAGE=14-bullseye
