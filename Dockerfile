@@ -1,5 +1,5 @@
 ARG NODE_IMAGE=20-bookworm
-ARG BREAK_PACKAGES=false
+ARG BREAK_PACKAGES
 FROM node:${NODE_IMAGE}
 
 RUN apt-get update 
