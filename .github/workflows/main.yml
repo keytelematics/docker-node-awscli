@@ -73,5 +73,7 @@ jobs:
           push: true
           tags: keytelematics/docker-node-awscli:14
           labels: node,awscli
-          build-args: NODE_IMAGE=14-bullseye
+          build-args: |
+            NODE_IMAGE=14-bullseye
+            BREAK_PACKAGES=false
             
