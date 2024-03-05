@@ -1,5 +1,5 @@
 ARG NODE_IMAGE=20-bookworm
-ARG PIP_ARGS=
+ARG PIP_ARGS
 FROM node:${NODE_IMAGE}
 
 RUN apt-get update 
